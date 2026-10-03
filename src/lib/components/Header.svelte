@@ -4,6 +4,9 @@
 	import { forumConfig } from '$lib/config';
 	import { auth } from '$lib/github/auth.svelte';
 	import { archiveMode, ui } from '$lib/ui.svelte';
+	import { locale } from 'svelte-i18n';
+	import { setLanguage } from '$lib/i18n';
+	import T from './T.svelte';
 	import ThemeToggle from './ThemeToggle.svelte';
 
 	let query = $state('');
@@ -70,6 +73,26 @@
 		{/if}
 
 		<div class="ml-auto flex items-center gap-2 sm:ml-0">
+			<div class="flex items-center gap-1 rounded-lg border border-fd-border p-0.5 text-xs">
+				<button
+					type="button"
+					onclick={() => setLanguage('en')}
+					class="rounded-md px-2 py-1 transition-colors {locale === 'en'
+						? 'bg-fd-accent font-medium'
+						: 'text-fd-muted-foreground hover:text-fd-foreground'}"
+				>
+					EN
+				</button>
+				<button
+					type="button"
+					onclick={() => setLanguage('zh')}
+					class="rounded-md px-2 py-1 transition-colors {locale === 'zh'
+						? 'bg-fd-accent font-medium'
+						: 'text-fd-muted-foreground hover:text-fd-foreground'}"
+				>
+					中文
+				</button>
+			</div>
 			<ThemeToggle />
 			{#if auth.loading}
 				<div class="size-8 animate-pulse rounded-full bg-fd-muted"></div>
@@ -119,7 +142,7 @@
 					onclick={() => (ui.signInOpen = true)}
 					class="inline-flex items-center gap-2 rounded-lg bg-fd-primary px-3 py-1.5 text-sm font-medium text-fd-primary-foreground transition-opacity hover:opacity-90"
 				>
-					Sign in
+					<T key="nav.signIn" />
 				</button>
 			{/if}
 		</div>
