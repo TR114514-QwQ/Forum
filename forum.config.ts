@@ -17,16 +17,16 @@ import { defineForumConfig } from './src/lib/config/schema';
  */
 export default defineForumConfig({
 	site: {
-		name: 'Discussion Kit',
-		description: 'A community forum powered by GitHub Discussions',
+		name: 'Forum',
+		description: 'A forum',
 		// logo: '💬',                        // emoji shown instead of the default icon
 		footer: 'Powered by GitHub Discussions'
 	},
 
 	repo: {
 		// Omit owner/name to auto-detect when building in GitHub Actions.
-		owner: 'NotReeceHarris',
-		name: 'discussion-kit'
+		owner: 'TR114514-QwQ',
+		name: 'Forum'
 	},
 
 	// Extra header links
@@ -38,19 +38,19 @@ export default defineForumConfig({
 		allowToken: true,
 		oauth: {
 			// Fill both to enable the "Continue with GitHub" button (see README):
-			clientId: 'Ov23li1QctsLGHqbcIwq',
-			proxyUrl: 'https://discussion-kit-oauth.reeceharris.workers.dev'
+			clientId: 'Ov23lihwCPcNbnPRyaH0',
+			proxyUrl: 'https://oauth-forum.traveler.dpdns.org'
 		}
 	},
 
 	admins: {
-		logins: ['NotReeceHarris'], // GitHub logins that get the admin badge
+		logins: ['TR114514-QwQ'], // GitHub logins that get the admin badge
 		badgeLabel: 'Admin'  // label shown next to admin usernames
 	},
 
 	// Custom badges shown next to usernames: label → GitHub logins
 	badges: {
-		'Moderator': ['NotDevenBriers'],
+		'Moderator': ['TR114514-QwQ'],
 		// 'Contributor': ['someuser', 'anotheruser']
 	},
 
