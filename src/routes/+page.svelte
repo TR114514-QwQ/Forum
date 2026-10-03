@@ -4,6 +4,7 @@
 	import Loading from '$lib/components/Loading.svelte';
 	import PinnedList from '$lib/components/PinnedList.svelte';
 	import SignInPrompt from '$lib/components/SignInPrompt.svelte';
+	import T from '$lib/components/T.svelte';
 	import { forumConfig } from '$lib/config';
 	import { listDiscussions } from '$lib/github/api';
 	import { auth } from '$lib/github/auth.svelte';
@@ -63,7 +64,7 @@
 	</div>
 {:else}
 	<div class="mb-6">
-		<h1 class="text-2xl font-bold tracking-tight">Latest discussions</h1>
+		<h1 class="text-2xl font-bold tracking-tight"><T key="home.latestDiscussions" /></h1>
 		<p class="mt-1 text-sm text-fd-muted-foreground">{forumConfig.site.description}</p>
 	</div>
 
@@ -96,13 +97,13 @@
 		<Loading />
 	{:else if discussions.length === 0}
 		<div class="rounded-2xl border border-dashed border-fd-border py-16 text-center">
-			<p class="font-medium">No discussions yet</p>
-			<p class="mt-1 text-sm text-fd-muted-foreground">Be the first to start one.</p>
+			<p class="font-medium"><T key="home.noDiscussions" /></p>
+			<p class="mt-1 text-sm text-fd-muted-foreground"><T key="home.beTheFirst" /></p>
 			<a
 				href={resolve('/new')}
 				class="mt-4 inline-flex rounded-lg bg-fd-primary px-4 py-2 text-sm font-medium text-fd-primary-foreground hover:opacity-90"
 			>
-				New post
+				<T key="home.newPost" />
 			</a>
 		</div>
 	{:else}

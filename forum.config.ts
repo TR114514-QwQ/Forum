@@ -19,8 +19,8 @@ export default defineForumConfig({
 	site: {
 		name: 'OyForum',
 		description: 'A forum powered by Github Discussions',
-		// logo: '💬',                        // emoji shown instead of the default icon
-		footer: 'Powered by GitHub Discussions'
+		 logo: '♾️',                        // emoji shown instead of the default icon
+		footer: 'Copyright © 2026 TR114514 '
 	},
 
 	repo: {

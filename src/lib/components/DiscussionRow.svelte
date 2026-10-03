@@ -4,6 +4,7 @@
 	import { isArticle } from '$lib/github/api';
 	import type { DiscussionListItem } from '$lib/github/types';
 	import { excerpt, timeAgo } from '$lib/utils';
+	import T from './T.svelte';
 	import UserBadges from './UserBadges.svelte';
 
 	let {
@@ -49,7 +50,7 @@
 				<span
 					class="shrink-0 rounded-full border border-fd-border bg-fd-muted px-2 py-0.5 text-[11px] font-medium text-fd-muted-foreground"
 				>
-					Article
+					<T key="thread.article" />
 				</span>
 			{/if}
 		</div>
