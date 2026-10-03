@@ -17,8 +17,8 @@ import { defineForumConfig } from './src/lib/config/schema';
  */
 export default defineForumConfig({
 	site: {
-		name: 'Forum',
-		description: 'A forum',
+		name: 'OyForum',
+		description: 'A forum powered by Github Discussions',
 		// logo: '💬',                        // emoji shown instead of the default icon
 		footer: 'Powered by GitHub Discussions'
 	},
