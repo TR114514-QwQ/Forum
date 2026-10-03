@@ -1,7 +1,9 @@
-import { register, init, getLocaleFromNavigator, locale } from 'svelte-i18n';
+import { addMessages, init, getLocaleFromNavigator, locale } from 'svelte-i18n';
+import en from './locales/en';
+import zh from './locales/zh';
 
-register('en', () => import('./locales/en'));
-register('zh', () => import('./locales/zh'));
+addMessages('en', en);
+addMessages('zh', zh);
 
 const saved = typeof localStorage !== 'undefined' ? localStorage.getItem('locale') : null;
 const browserLocale = getLocaleFromNavigator();
